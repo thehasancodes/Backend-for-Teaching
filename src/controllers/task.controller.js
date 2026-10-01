@@ -9,10 +9,7 @@ const createTask = async (req, res) => {
       data: task,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 const getTasks = async (req, res) => {
@@ -24,10 +21,7 @@ const getTasks = async (req, res) => {
       data: tasks,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
@@ -46,10 +40,7 @@ const getTaskById = async (req, res) => {
       data: task,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
@@ -67,10 +58,7 @@ const deleteTask = async (req, res) => {
       message: "task Deleted succesffully",
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
@@ -88,10 +76,7 @@ const updateTask = async (req, res) => {
       message: "task Updated succesffully",
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
