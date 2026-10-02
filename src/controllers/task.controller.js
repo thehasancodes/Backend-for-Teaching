@@ -1,5 +1,4 @@
 const taskService = require("../services/task.service");
-
 const createTask = async (req, res) => {
   try {
     const task = await taskService.createTask(req.body);
